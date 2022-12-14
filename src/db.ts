@@ -5,6 +5,7 @@ export default mysql
     host: 'localhost',
     user: 'root',
     password: '',
-    database: 'database',
+    database: 'macskak',
   })
   .promise();
+  
