@@ -44,7 +44,7 @@ export class AppController {
       return { url: '/' };
     } else {
       const [result]: any = await db.execute(
-        'INSERT INTO macska (suly , szem_szin) VALUES (? , ?)',
+        'INSERT INTO macskak (suly , szem_szin) VALUES (? , ?)',
         [macska.suly, macska.szem_szin],
       );
       return { url: '/' };
