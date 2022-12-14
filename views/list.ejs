@@ -4,18 +4,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>MacskaDokumentum</title>
 </head>
 <body>
     <form method="GET">
         <input type="text" name="szem_szin">
-        <input type="submit" value="szemszinkeres">
+        <input type="submit" value="Szem Színére keresés">
     </form>
+    <a href="/cats/new">Új macska beillesztése</a>
     <table>
         <tr>
             <th>Súly</th>
             <th>Szem Színe</th>
         </tr>
+        <br>
         <% for (let p of macskak){ %>
             <tr>
                 <th><%= p.suly %></th>
