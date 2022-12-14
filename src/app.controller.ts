@@ -13,13 +13,23 @@ export class AppController {
 
   @Get()
   @Render('list')
-  async listCats() {
-    const [rows] = await db.execute(
-      'SELECT suly , szem_szin FROM macskak ORDER BY suly ASC',
-    );
-    return {
-      macskak: rows,
-    };
+  async listCats(@Query('color') color = '') {
+    if (color != '') {
+      const [rows] = await db.execute(
+        'SELECT suly , szem_szin FROM macskak WHERE szem_szin = ? ORDER BY suly DESC',
+        [color],
+      );
+      return {
+        macskak: rows,
+      };
+    } else {
+      const [rows] = await db.execute(
+        'SELECT suly , szem_szin FROM macskak ORDER BY suly DESC',
+      );
+      return {
+        macskak: rows,
+      };
+    }
   }
 
   @Get('cats/new')
